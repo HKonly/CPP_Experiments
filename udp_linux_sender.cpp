@@ -11,11 +11,17 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-//    struct sockaddr_in self_addr;
-//    memset(&self_addr, 0, sizeof(self_addr));
-//    self_addr.sin_family = AF_INET;
-//    self_addr.sin_port = htons(4000);
-//    self_addr.sin_addr.s_addr = inet_addr("172.30.1.60")
+    struct sockaddr_in self_addr;
+    memset(&self_addr, 0, sizeof(self_addr));
+    self_addr.sin_family = AF_INET;
+    self_addr.sin_port = htons(4000);
+    self_addr.sin_addr.s_addr = inet_addr("172.30.1.114");
+
+    int result_bind = bind(sock, (struct sockaddr*)&self_addr, sizeof(self_addr));
+    if (result_bind == -1) {
+        printf("bind failed!\n");
+        return -1;
+    }
 
     struct sockaddr_in server_addr;
     memset(&server_addr, 0, sizeof(server_addr));
