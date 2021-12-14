@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
         recvfrom(sock, buff_rcv, BUFF_SIZE, 0, (struct sockaddr*)&client_addr, &client_addr_size); 
 
 		printf("Buffer:");
-		for (int i=0 ; i<BUFF_SIZE ; i++) { printf(" %x"); }
+		for (int i=0 ; i<BUFF_SIZE ; i++) { printf(" %x", buff_rcv[i]); }
 		printf("\n");
     }
 

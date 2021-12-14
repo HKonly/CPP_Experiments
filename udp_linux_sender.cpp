@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     memset(&server_addr, 0, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(4000);
-    server_addr.sin_addr.s_addr = inet_addr("127.30.1.60");
+    server_addr.sin_addr.s_addr = inet_addr("127.30.1.114");
 
     while(true) {
         char buff[10] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a};
